@@ -1,3 +1,9 @@
+// sum the number till n 
+// sum up of all the array element 
+// substract array's element sum from sum of n number 
+
+
+
 class Solution {
     public int missingNumber(int[] nums) {
         int sum;
