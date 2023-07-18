@@ -1,18 +1,22 @@
+//Step 1: Transpose the matrix. (transposing means changing columns to rows and rows to columns)
+
+//Step 2: Reverse each row of the matrix.
 class Solution {
     public void rotate(int[][] matrix) {
-        int length = matrix.length;
-        for (int i = 0; i < length / 2; i++) {
-            int[] temp = matrix[i];
-            matrix[i] = matrix[length - i - 1];
-            matrix[length - i - 1] = temp;
-        }
-
-        for (int i = 0; i < length - 1; i++) {
-            for (int j = i + 1; j < length; j++) {
-                int temp = matrix[i][j];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = i; j < matrix[0].length; j++) {
+                int temp = 0;
+                temp = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
                 matrix[j][i] = temp;
             }
         }
-    }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length / 2; j++) {
+                int temp = 0;
+                temp = matrix[i][j];
+                matrix[i][j] = matrix[i][matrix.length - 1 - j];
+                matrix[i][matrix.length - 1 - j] = temp;
+            }
+    }   }
 }
