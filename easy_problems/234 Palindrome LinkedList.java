@@ -8,43 +8,24 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+ /** While traversing the whole linked list, compile the number, as well as the reversed number, represented by the list. If both are same, then return true, else false. */
 class Solution {
     public boolean isPalindrome(ListNode head) {
-        public ListNode findmid(ListNode head){
-            ListNode slow = head;
-            ListNode fast = head;
-             while (fast!null && fast.next!=null){
-               slow = slow.next;
-               fast= fast.next.next;  
-             }
-             return slow;
-             }
+         ListNode temp = head;
+        int num = 0;
+        int rev = 0;
+        int mul = 1;
 
+        while(temp != null) {
+
+            num = num * 10 + temp.val;
+            rev = rev + temp.val * mul; 
+            mul *= 10;
+
+            temp = temp.next;
         }
-         if(head==null || head.next==null ){
-             return true ;
-         }
-         ListNode midNode  = findmid(head);
-         ListNode prev = null;
-         ListNode curr = midNode;
-         LIstNode next;
-         while (curr!null){
-           next = curr.next;
-           curr.next= prev;
-           prev = curr;
-           curr = next;
-         }
-         ListNode right = prev;
-         ListNode left = next;
 
-         while (right!=null){
-             if(left.val!=right.val){
-                 return false ;
-             }
-             left = left.next ;
-             right = right.next
-         }
-         return true 
-
-     }   
+        return num == rev;
+    }
 }
