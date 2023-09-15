@@ -1,3 +1,4 @@
+// sliding window 
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
