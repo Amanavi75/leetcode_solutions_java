@@ -1,4 +1,4 @@
-lass Solution {
+class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
     // Create a HashMap to store elements as keys and their indices as values.
     HashMap<Integer, Integer> map = new HashMap<>();
