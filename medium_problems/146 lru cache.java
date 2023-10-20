@@ -1,8 +1,8 @@
-/**While inserting the {key,val}pair consider the following
+/*** -----While inserting the {key,val}pair consider the following
 
 Check if the {key,val} pair is already present in Cache.
 Check for the capacity. if the Cache size == capacity then while inserting the new pair remove the LRU and insert the new pair right after the head.while removing the node make sure to remove the {value, node} pair from the cache.
-If the key is not present in the Cache then return -1; */
+If the key is not present in the Cache then return -1;  --- */
 
 
 class LRUCache {
