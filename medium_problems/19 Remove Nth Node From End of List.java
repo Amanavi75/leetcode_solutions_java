@@ -10,19 +10,29 @@
  */
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-       ListNode start = new ListNode(); // ceate a dummy node first 
-       start.next = head;// points its next to head 
-       ListNode fast = start ; // create a fast and slow pointer 
-       ListNode slow = start ;
+        
+        ListNode slow = head ;
+        ListNode fast = head ;
 
-       for (int i =0;i<n;i++){
-           fast = fast.next;
-       } 
-       while(fast.next!=null) { // run it till fast tend to null
-           fast = fast.next;
-           slow = slow.next;
-       }
-       slow.next = slow.next.next;
-       return start.next;  
+        for (int i = 0;i<n;i++){
+            fast= fast.next;
+        }   // take your fast node to  till n node 
+
+        if(fast==null){
+           head =head.next;
+             return head;
+        } // corner case check if fast == null 
+
+        while(fast.next!=null){
+            slow = slow.next ;
+            fast= fast.next ;
+
+        } // now move your slow and fast  till fast.next not equal to null automaticlly the slow will be     at   the right place basically the nth node you are searching for  .
+
+        slow.next = slow.next.next; // delete the required node
+ 
+       return head ;
+
     }
+
 }
